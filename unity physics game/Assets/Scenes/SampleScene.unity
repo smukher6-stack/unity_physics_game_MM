@@ -973,6 +973,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1468b9a423d639641bc2d6ff9cc19472, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::interactableObject
+  highlightedColor: {r: 1, g: 0.95, b: 0.6, a: 1}
+  highlighStrength: 0.4
 --- !u!65 &1200882651
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1019,7 +1021,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 31321ba15b8f8eb4c954353edc038b1d, type: 2}
+  - {fileID: 2100000, guid: 17f20095de602634fb90fbb1999e2111, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0

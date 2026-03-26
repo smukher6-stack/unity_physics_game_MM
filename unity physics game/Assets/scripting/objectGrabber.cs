@@ -19,7 +19,7 @@ public class objectGrabber : MonoBehaviour
 
     private Rigidbody heldObject;
     private bool isHolding = false;
-
+    private interactableObject currentHighlight;
     void FixedUpdate()
     {
         if (isHolding && heldObject != null) MoveHeldObject();
@@ -29,7 +29,8 @@ public class objectGrabber : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        UpdateHighlight();
+
     }
 
     void TryGrab()
@@ -51,6 +52,9 @@ public class objectGrabber : MonoBehaviour
                     heldObject.freezeRotation = true; 
                     heldObject.linearVelocity = Vector3.zero;
                     heldObject.angularVelocity = Vector3.zero;
+
+                    interactable.Unhighlight();
+                    currentHighlight = null;
 
                     isHolding = true;
                     Debug.Log("yoink");
@@ -111,5 +115,36 @@ public class objectGrabber : MonoBehaviour
     public void OnThrowPerformed(InputAction.CallbackContext context)
     {
         if (isHolding) ThrowObject();
+    }
+
+    void UpdateHighlight()
+    {
+        if(isHolding) return;
+
+        Ray ray = new Ray(transform.position, transform.forward);
+        RaycastHit hit;
+        Debug.DrawRay(transform.position, transform.forward * grabRange, Color.peachPuff);
+
+        if(Physics.Raycast(ray, out hit, grabRange))
+        {
+            interactableObject interactable = hit.collider.GetComponent<interactableObject>();
+            if (interactable != null)
+            {
+                if(currentHighlight != null && currentHighlight != interactable)
+                {
+                    currentHighlight.Unhighlight();
+                    Debug.Log("whoops got your highlight");
+                }
+                interactable.Highlight();
+                currentHighlight = interactable;
+                return;
+            }
+        }
+
+        if(currentHighlight != null)
+        {
+            currentHighlight.Unhighlight();
+            currentHighlight = null;
+        }
     }
 }
