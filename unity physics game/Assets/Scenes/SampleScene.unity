@@ -416,7 +416,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-    m_ActionId: f0a3882d-f83b-40f7-bdfe-446368c9a42d
+    m_ActionId: ec29f528-1ec3-4c5c-b403-eb9313f65014
     m_ActionName: 'Player/pickup[/Keyboard/e]'
   - m_PersistentCalls:
       m_Calls:
@@ -432,8 +432,8 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-    m_ActionId: c49b588a-919a-4c8c-88b2-45de6c82fc58
-    m_ActionName: 'Player/throw[/Mouse/leftButton]'
+    m_ActionId: e12dbf95-6e79-4663-8821-3b7e524b8b21
+    m_ActionName: 'Player/Throw[/Mouse/leftButton]'
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: Keyboard&Mouse
   m_DefaultActionMap: Player
@@ -968,9 +968,10 @@ GameObject:
   - component: {fileID: 1200882654}
   - component: {fileID: 1200882653}
   - component: {fileID: 1200882652}
-  - component: {fileID: 1200882651}
   - component: {fileID: 1200882650}
+  - component: {fileID: 1200882657}
   - component: {fileID: 1200882655}
+  - component: {fileID: 1200882656}
   m_Layer: 0
   m_Name: Cube
   m_TagString: Untagged
@@ -992,27 +993,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::interactableObject
   highlightedColor: {r: 1, g: 0.95, b: 0.6, a: 1}
   highlighStrength: 0.4
---- !u!65 &1200882651
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1200882649}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 3.0329266, y: 2.548842, z: 2.0867665}
-  m_Center: {x: 1.0164633, y: 0.774421, z: 0.54338324}
 --- !u!23 &1200882652
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -1112,6 +1092,46 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!65 &1200882656
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1200882649}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &1200882657
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1200882649}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 59a99ecb4189930499aa9a31d79c9f39, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::physicsObject
+  mass: 24.8
+  dragPath: 0.96
+  dragContour: 0.81
+  bouncyCastle: 1
+  friction: 0.162
+  puzzleWeight: -1
+  isHeld: 0
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0

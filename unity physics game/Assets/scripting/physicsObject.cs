@@ -37,7 +37,7 @@ public class physicsObject : MonoBehaviour
         rb = GetComponent<Rigidbody>();
         //function time
         ApplyRigidBodySettings();
-        ApplySurfaceSettings();
+        ApplySurfaceSettings();                                                                    
     }
 
     void ApplyRigidBodySettings()
