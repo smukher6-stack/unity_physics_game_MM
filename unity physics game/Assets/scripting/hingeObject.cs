@@ -6,16 +6,16 @@ using UnityEngine.InputSystem;
 public class hingeObject : MonoBehaviour
 {
 
-    public float minAngle;
-    public float maxAngle;
-    public bool useSpring;
-    public float springTargetAngle;
-    public float springForce;
-    public float springDamping;
+    public float minAngle = 0f;
+    public float maxAngle = 90f;
+    public bool useSpring = true;
+    public float springTargetAngle = 0f;
+    public float springForce = 50f;
+    public float springDamping = 5f;
 
     public UnityEvent OnReachMax;
     public UnityEvent OnReachMin;
-    public float eventThreshold;
+    public float eventThreshold = 5f;
 
     HingeJoint hinge;
     bool maxEventFired = false;
